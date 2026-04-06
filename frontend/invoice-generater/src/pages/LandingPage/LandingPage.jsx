@@ -4,6 +4,7 @@ import Hero from '../../components/landing/Hero';
 import Features from '../../components/landing/Features';
 import Testimonials from '../../components/landing/Testimonials';
 import Faqs from '../../components/landing/Faqs';
+import Footer from '../../components/landing/Footer';
 
 
 const LandingPage = () => {
@@ -14,11 +15,12 @@ const LandingPage = () => {
     <div className='bg-[#fffff] text-gray-600'>
      <Header />
 
-     <main className='mb-[100vh]'>
+     <main>
       <Hero />
       <Features />
       <Testimonials />
       <Faqs />
+      <Footer />
      </main>
 
     </div>
