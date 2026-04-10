@@ -14,11 +14,12 @@ const protect = async(req, res, next) => {
 
             // verify token
             const decoded = jwt.verify(token, process.env.JWT_SECRET);
+            console.log(typeof next);
 
             // Get User from token
-            req.user = await User.findById(decoded.id).select('-passwrod');
+            req.user = await User.findById(decoded.id).select('-password');
 
-            next();
+          return  next();
         } catch (err) {
             return res.status(401).json({
                 message: 'Not authorized, token failed'
@@ -28,7 +29,7 @@ const protect = async(req, res, next) => {
 
     if(!token){
         return res.status(401).json({
-            mesage: 'Not authorized, no token'
+            message: 'Not authorized, no token'
         })
     }
 }
